@@ -11,6 +11,8 @@ class BowlingGame:
         self._frames.append(frame)
 
     def get_frame_at(self, i: int) -> Frame:
+        if len(self._frames) <= i:
+            raise BowlingError
         return self._frames[i]
 
     def calculate_score(self) -> int:
